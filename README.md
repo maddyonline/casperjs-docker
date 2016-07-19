@@ -23,6 +23,13 @@ It is a slightly modified version of the one used by the *casperbox.com* service
 
 ## Usage
 
+```sh
+docker run -a stdout -u casperbox -h casperbox -m 192m --rm=true -v "$(pwd)":/home/casperbox/source_files -w="/home/casperbox" --env PHANTOMJS_EXECUTABLE=phantomjs/bin/phantomjs ubuntu/14.04:casperbox casperjs/bin/casperjs source_files/source.js arg1 arg2
+```
+
+
+### Original Usage follows
+
 ```javascript
 var casper = require('./casperjs-docker');
 casper.runScript(

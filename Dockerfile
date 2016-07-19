@@ -22,20 +22,20 @@ RUN chown -R casperbox:casperbox node
 RUN mv node ~casperbox
 
 # install phantomjs
-RUN wget --no-check-certificate https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
+RUN wget --no-check-certificate https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+#https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
 RUN apt-get install -y --force-yes bzip2
-RUN bunzip2 phantomjs-1.9.7-linux-x86_64.tar.bz2
-RUN tar -xf phantomjs-1.9.7-linux-x86_64.tar
-RUN rm phantomjs-1.9.7-linux-x86_64.tar
-RUN mv phantomjs-1.9.7-linux-x86_64 phantomjs
+RUN bunzip2 phantomjs-2.1.1-linux-x86_64.tar.bz2
+RUN tar -xf phantomjs-2.1.1-linux-x86_64.tar
+RUN rm phantomjs-2.1.1-linux-x86_64.tar
+RUN mv phantomjs-2.1.1-linux-x86_64 phantomjs
 RUN chown -R casperbox:casperbox phantomjs
 RUN mv phantomjs ~casperbox
 
 # install casperjs
-RUN wget --no-check-certificate https://github.com/n1k0/casperjs/zipball/1.1-beta3
+RUN wget --no-check-certificate https://github.com/casperjs/casperjs/archive/1.1.2.zip
 RUN apt-get install -y --force-yes unzip
-RUN unzip 1.1-beta3
-RUN rm 1.1-beta3
+RUN unzip 1.1.2
 RUN mv *casperjs* casperjs
 RUN chown -R casperbox:casperbox casperjs
 RUN mv casperjs ~casperbox
